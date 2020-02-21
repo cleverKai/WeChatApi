@@ -1,8 +1,9 @@
 <?php
 
-
 namespace app\api\controller\v1;
 
+use app\api\validate\IDMustBePostiveInt;
+use think\Validate;
 
 class Banner
 {
@@ -13,6 +14,22 @@ class Banner
      * @http GET
      * */
     public function getBanner($id){
+        // 验证器
+        (new IDMustBePostiveInt())->goCheck();
+//        $data = [
+//            'id' => $id,
+//        ];
+////        $validate = new Validate([
+////            'id' => ''
+////        ]);
+//        $validate = new IDMustBePostiveInt();
+//        $result = $validate->batch()->check($data);
+//        if($result){
+//
+//        }else{
+//
+//        }
+
 
     }
 
